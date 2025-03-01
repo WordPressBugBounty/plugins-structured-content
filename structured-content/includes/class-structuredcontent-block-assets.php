@@ -69,8 +69,16 @@ class StructuredContent_Block_Assets {
 	 * Print CSS
 	 */
 	public function print_css() {
-		$print_css = $this->_url . '/dist/print.css';
-		echo "<script>window.wpsc_print_css_uri = '$print_css';</script>";
+		// Validate and sanitize the URL
+		if ( ! preg_match( '/^https?:\/\//', $this->_url ) && ! preg_match( '/^\//', $this->_url ) ) {
+			$this->_url = ''; // Set to a safe default value
+		}
+
+		// Construct the CSS URL
+		$print_css = esc_url( $this->_url . '/dist/print.css' );
+
+		// Safely output the JavaScript
+		echo "<script>window.wpsc_print_css_uri = '" . esc_js( $print_css ) . "';</script>";
 	}
 
 	/**

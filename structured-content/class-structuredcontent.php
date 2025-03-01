@@ -5,7 +5,7 @@
  * Description: Pimp your content with some feature boxes, which labels the output with micro formats http://schema.org/
  * Author: Gordon Böhme, Antonio Leutsch
  * Author URI: https://wpsc-plugin.com
- * Version: 1.6.3
+ * Version: 1.6.4
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: structured-content
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-const STRUCTURED_CONTENT_VERSION = '1.6.3';
+const STRUCTURED_CONTENT_VERSION = '1.6.4';
 define( 'STRUCTURED_CONTENT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'STRUCTURED_CONTENT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 

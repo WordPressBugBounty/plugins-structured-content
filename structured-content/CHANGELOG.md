@@ -2,6 +2,9 @@
 
 Here we document the development of the plugin and give an outlook on the upcoming version.
 
+## 1.6.4 - 2025-03-01
+- [FIX] Cross-Site Scripting (XSS) Vulnerability
+
 ## 1.6.3 - 2024-08-01
 - [FIX] Cross-Site Scripting (XSS) Vulnerability in Recipe Block
 

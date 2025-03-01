@@ -78,10 +78,22 @@ class StructuredContent_Register_TinyMCE {
 	}
 
 	public function tinymce_extra_vars() {
-		$json = json_encode( array( 'structured_content_dropdown_name' => esc_html__( 'Structured Content', 'structured-content' ) ) );
-		echo "<script>const structured_content_tinymce = $json</script>";
-	}
+		// Prepare the data
+		$data = array(
+			'structured_content_dropdown_name' => esc_html__( 'Structured Content', 'structured-content' ),
+		);
 
+		// Encode the data safely
+		$json = wp_json_encode( $data );
+
+		// Escape the entire script tag and output
+		echo wp_kses(
+			"<script>const structured_content_tinymce = $json;</script>",
+			array(
+				'script' => array(),
+			)
+		);
+	}
 	public function wpsc_tinymce_languages( $wpsc_locales ) {
 		$wpsc_locales['wpsc'] = STRUCTURED_CONTENT_PLUGIN_DIR . '/languages/structured-content-js.php';
 

@@ -1,16 +1,16 @@
 == Structured Content (JSON-LD) #wpsc ==
 
 Contributors: gorbo,antonioleutsch
-Tags: Recipe,FAQPage,LocalBusiness,JobPosting,Event,Course,Person,wpsc,structured content,jsonld,json,json-ld
+Tags:FAQPage,LocalBusiness,JobPosting,jsonld,wpsc
 Donate link: https://paypal.me/antonioleutsch
 Requires at least: 7.3
-Tested up to: 6.4.2
+Tested up to: 6.7.2
 Requires PHP: 7.0
-Stable tag: 1.6.3
+Stable tag: 1.6.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add flexible content boxes with JSON-LD microdata output according to schema.org e.g. FAQPage, Recipe, Event, Course, LocalBusiness or JobPosting. It's your chance to beat the competition and for higher rank results – SEO for winners. #wpsc
+Add flexible content boxes with JSON-LD microdata output according to schema.org e.g. FAQPage, Person, Event, Course, LocalBusiness or JobPosting.
 
 == Installation ==
 
@@ -84,6 +84,9 @@ We will continuously offer new structured data elements and deliver them as upda
 4. Adding a FAQPage section in Gutenberg
 
 == Changelog ==
+
+= 1.6.4 =
+* [FIX] Cross-Site Scripting (XSS) Vulnerability
 
 = 1.6.3 =
 * [FIX] Cross-Site Scripting (XSS) Vulnerability in Recipe Block

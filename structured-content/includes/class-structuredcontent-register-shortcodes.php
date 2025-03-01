@@ -408,8 +408,8 @@ class StructuredContent_Shortcodes {
 		}
 
 		foreach ( $merged_atts['elements'] as $key => $element ) {
-			$merged_atts['elements'][ $key ]['status']                = isset( $element['status'] ) && $element['status'] !== '' ? $element['status'] : __( 'EventScheduled' );
-			$merged_atts['elements'][ $key ]['event_attendance_mode'] = isset( $element['event_attendance_mode'] ) && $element['event_attendance_mode'] != '' ? $element['event_attendance_mode'] : __( 'MixedEventAttendanceMode' );
+			$merged_atts['elements'][ $key ]['status']                = isset( $element['status'] ) && $element['status'] !== '' ? $element['status'] : __( 'EventScheduled', 'structured-content' );
+			$merged_atts['elements'][ $key ]['event_attendance_mode'] = isset( $element['event_attendance_mode'] ) && $element['event_attendance_mode'] != '' ? $element['event_attendance_mode'] : __( 'MixedEventAttendanceMode', 'structured-content' );
 
 			if ( ! empty( $element['image_id'] ) ) {
 				$image_id       = intval( $element['image_id'] );

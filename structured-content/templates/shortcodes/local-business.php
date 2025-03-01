@@ -7,7 +7,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 	<section class="sc_fs_local_business sc_card <?php echo esc_attr($atts['className']); ?>">
 		<?php echo wp_kses_post($title); ?>
 		<?php if ( $atts['description'] ) { ?>
-			<p><?php echo htmlspecialchars_decode( do_shortcode( $atts['description'] ) ); ?></p>
+            <p><?php echo wp_kses_post( htmlspecialchars_decode( do_shortcode( $atts['description'] ) ) ); ?></p>
 		<?php } ?>
 		<div class="sc_row">
 			<div class="sc_grey-box">
