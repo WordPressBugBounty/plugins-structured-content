@@ -5,7 +5,7 @@
  * Description: Pimp your content with some feature boxes, which labels the output with micro formats http://schema.org/
  * Author: Gordon Böhme, Antonio Leutsch
  * Author URI: https://wpsc-plugin.com
- * Version: 1.6.4
+ * Version: 1.7.0
  * License: GPL2+
  * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: structured-content
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-const STRUCTURED_CONTENT_VERSION = '1.6.4';
+const STRUCTURED_CONTENT_VERSION = '1.7.0';
 define( 'STRUCTURED_CONTENT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'STRUCTURED_CONTENT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
@@ -181,24 +181,50 @@ if ( function_exists( 'is_multisite' ) && is_multisite() ) {
 	StructuredContent();
 }
 
-
 /**
- * Helper Function to escape in json-ld string.
+ * Sanitize a string for safe usage in JSON-LD context.
+ * Allows only specific HTML tags (without any attributes).
  */
+function sanitize_jsonld_input( $string ) {
+	// Erlaubte Tags definieren (ohne Attribute)
+	$allowed_tags = [
+		'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+		'br', 'ol', 'ul', 'li',
+		'a', 'p', 'div',
+		'b', 'strong', 'i', 'em'
+	];
+
+	// Alle Tags außer die erlaubten entfernen (ohne Attribute!)
+	$string = preg_replace_callback(
+		'/<(?<slash>\/?)(?<tag>[a-z0-9]+)[^>]*>/i',
+		function ( $matches ) use ( $allowed_tags ) {
+			$tag = strtolower( $matches['tag'] );
+			$slash = $matches['slash'] ? '/' : '';
+
+			if ( in_array( $tag, $allowed_tags, true ) ) {
+				return "<{$slash}{$tag}>";
+			}
+			return '';
+		},
+		$string
+	);
+
+	return $string;
+}
 function wpsc_esc_jsonld( $string ) {
+	// Erst sanitizen
+	$string = sanitize_jsonld_input( $string );
 
-
-	// escape backslashes with double backslashes
-
+	// Backslashes escapen
 	$string = str_replace( '\\', '\\\\', $string );
 
+	// Anführungszeichen escapen
 	$string = str_replace( '"', '\"', $string );
 
-	// remove script tags
-
+	// <script> Tags entfernen
 	$string = preg_replace( '/<script\b[^>]*>(.*?)<\/script>/is', '', $string );
 
-
+	// Erlaube externe Filter
 	$string = apply_filters( 'structured_content_esc_jsonld_filter', $string );
 
 	return $string;

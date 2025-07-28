@@ -34,7 +34,7 @@ class StructuredContent_Register_Blocks {
 	private function __construct() {
 		$this->_slug = 'structured-content';
 
-		$this->blocks = array( 'faq', 'faq-item', 'job', 'event', 'person', 'course', 'local-business', 'recipe' );
+		$this->blocks = array( 'faq', 'faq-item', 'job', 'event', 'person', 'course', 'local-business', 'recipe', 'profile-page' );
 
 		add_action( 'init', array( $this, 'register_blocks' ), 99 );
 	}

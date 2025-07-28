@@ -2,8 +2,22 @@
 
 Here we document the development of the plugin and give an outlook on the upcoming version.
 
-## 1.6.4 - 2025-03-01
-- [FIX] Cross-Site Scripting (XSS) Vulnerability
+## 1.7.0 – 2025-06-09
+- [FEATURE] New Gutenberg block ProfilePgae
+- [FEATURE] Update Recipe Block
+- [FEATURE] Gutenberg block Course with new atrributes
+- [PATCH] Compatibility with WP 6.8
+- [FIX] Fix Vulnerability
+
+## 1.6.4 – 2025-02-28
+- [FIX] Fix Vulnerability
+- [PATCH] Compatibility with WP 6.7
+
+## 1.6.3 – 2024-08-05
+- [FIX] Fix Cross-Site Scripting (XSS) Vulnerability in Recipe Block
+
+## 1.6.2 – 2024-01-08
+- [FIX] Cross-Site Scripting (XSS) Vulnerability in Shortcodes
 
 ## 1.6.3 - 2024-08-01
 - [FIX] Cross-Site Scripting (XSS) Vulnerability in Recipe Block

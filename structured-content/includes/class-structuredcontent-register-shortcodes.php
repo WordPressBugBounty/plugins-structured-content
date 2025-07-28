@@ -53,6 +53,7 @@ class StructuredContent_Shortcodes {
 		add_shortcode( 'sc_fs_job', array( $this, 'job' ) );
 		add_shortcode( 'sc_fs_event', array( $this, 'event' ) );
 		add_shortcode( 'sc_fs_person', array( $this, 'person' ) );
+		add_shortcode( 'sc_fs_profile_page', array( $this, 'profile_page' ) );
 		add_shortcode( 'sc_fs_course', array( $this, 'course' ) );
 		add_shortcode( 'sc_fs_local_business', array( $this, 'local_business' ) );
 		add_shortcode( 'sc_fs_recipe', array( $this, 'recipe' ) );
@@ -537,6 +538,79 @@ class StructuredContent_Shortcodes {
 		return $output;
 	}
 
+	public static function profile_page( $atts, $content = null ) {
+		$merged_atts = shortcode_atts(
+			array(
+				'className'         => '',
+				'css_class'         => '',
+				'html'              => true,
+				'profile_name'      => '',
+				'generate_title_id' => false,
+				'custom_title_id'   => '',
+				'alternate_name'    => '',
+				'job_title'         => '',
+				'image_id'          => '',
+				'imageAlt'          => '',
+				'birthdate'         => '',
+				'email'             => '',
+				'telephone'         => '',
+				'homepage'          => '',
+				'street_address'    => '',
+				'address_locality'  => '',
+				'address_region'    => '',
+				'postal_code'       => '',
+				'address_country'   => '',
+				'same_as'           => array(),
+				'works_for_name'    => '',
+				'works_for_alt'     => '',
+				'works_for_url'     => '',
+				'works_for_logo'    => '',
+			),
+			$atts
+		);
+
+		if ( ! empty( $merged_atts['image_id'] ) ) {
+			$image_id       = intval( $merged_atts['image_id'] );
+			$image_url      = wp_get_attachment_url( $image_id );
+			$image_thumburl = wp_get_attachment_image_url( $image_id, array( 150, 150 ) );
+			$image_meta     = wp_get_attachment_metadata( $image_id );
+
+			if ( $image_thumburl !== false && $image_meta !== false && $image_url !== false ) {
+				$merged_atts['image_url']     = $image_url;
+				$merged_atts['thumbnail_url'] = $image_thumburl;
+				$merged_atts['image_size']    = array( $image_meta['width'], $image_meta['height'] );
+				if ( empty( $merged_atts['imageAlt'] ) ) {
+					$merged_atts['imageAlt'] = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+				}
+			} else {
+				$merged_atts['image_id'] = 0;
+			}
+		}
+
+		if ( isset( $atts['same_as'] ) ) {
+			if ( is_array( $atts['same_as'] ) ) {
+				$same_as = array();
+				foreach ( $merged_atts['same_as'] as $same ) {
+					$same_as[] = $same['url'];
+				}
+				$merged_atts['same_as'] = $same_as;
+			} else {
+				$merged_atts['same_as'] = explode( ',', $atts['same_as'] );
+			}
+		} else {
+			$merged_atts['same_as'] = array();
+		}
+
+		$atts = $merged_atts;
+
+		ob_start();
+		include STRUCTURED_CONTENT_PLUGIN_DIR . 'templates/blocks/profile-page.php';
+		$output = ob_get_contents();
+		ob_end_clean();
+
+		return $output;
+	}
+
 	public static function course( $atts, $content = null ) {
 		$merged_atts = shortcode_atts(
 			array(
@@ -560,6 +634,26 @@ class StructuredContent_Shortcodes {
 					'description'      => $content,
 					'provider_name'    => '',
 					'provider_same_as' => '',
+					'course_instance'  => array(
+						'name'            => '',
+						'start_date'      => '',
+						'end_date'        => '',
+						'course_mode'     => 'online',
+						'course_platform' => '',
+						'course_url'      => '',
+						'course_schedule' => '',
+						'repeat_count'    => '',
+						'repeat_frequency' => '',
+						'repeat_frequency_readable' => '',
+					),
+					'offers'          => array(
+						'price'           => '',
+						'price_currency'  => 'USD',
+						'availability'    => 'InStock',
+						'valid_from'      => '',
+						'url'             => '',
+						'category'        => '',
+					),
 				),
 				$atts
 			);
@@ -567,6 +661,13 @@ class StructuredContent_Shortcodes {
 			$single_atts['visible'] = $single_atts['html'] === 'true' ? true : false;
 			unset( $single_atts['html'] );
 			$merged_atts['elements'] = array( $single_atts );
+		}
+
+		// convert repeat_frequency to repeat_frequency_readable
+		foreach ($atts['elements'] as $key => $element) {
+			if (!empty($element['course_instance']['repeat_frequency'])) {
+				$merged_atts['elements'][$key]['course_instance']['repeat_frequency_readable'] = self::convert_duration_to_readable($element['course_instance']['repeat_frequency']);
+			}
 		}
 
 		$atts = $merged_atts;
@@ -768,7 +869,7 @@ class StructuredContent_Shortcodes {
 		}
 
 		/**
-		 * Check if $atts['video]['contentUrl'] is a valid URL and if it is, check if it is a YouTube or Vimeo URL
+		 * Check if $atts['video']['contentUrl'] is a valid URL and if it is, check if it is a YouTube or Vimeo URL
 		 */
 		if ( isset( $atts['video']['contentUrl'] ) && $atts['video']['contentUrl'] !== '' ) {
 			$atts['video']['contentUrl'] = esc_url( $atts['video']['contentUrl'] );
@@ -791,13 +892,15 @@ class StructuredContent_Shortcodes {
 				'name'        => $atts['video']['name'],
 				'description' => $atts['video']['description'],
 				'contentUrl'  => $atts['video']['contentUrl'],
-				'thumbnail'   => $atts['video']['thumbnailUrl'],
+				'thumbnailUrl' => $atts['video']['thumbnailUrl'],
+				'uploadDate'  => $atts['video']['uploadDate'],
 			];
 
 			if ( isset( $atts['video']['mediaVideo'] ) ) {
 				$video['description'] = $atts['video']['mediaVideo']['description'];
 				$video['contentUrl']  = $atts['video']['mediaVideo']['url'];
-				$video['thumbnail']   = $atts['video']['mediaVideo']['thumb']['src'] ?? $atts['video']['mediaVideo']['image']['src'];
+				$video['thumbnailUrl'] = $atts['video']['thumbnailUrl'] ?? $atts['video']['mediaVideo']['thumb']['src'] ?? $atts['video']['mediaVideo']['image']['src'];
+				$video['uploadDate'] = $atts['video']['mediaVideo']['date'] ?? $atts['video']['uploadDate'];
 			}
 
 			$atts['videoJson'] = apply_filters( 'structured_content_recipe_video_json', $video );

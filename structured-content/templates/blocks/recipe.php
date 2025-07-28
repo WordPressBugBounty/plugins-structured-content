@@ -160,7 +160,7 @@ if ( $atts['visible'] ) {
 				<?php } ?>
 				<?php if ( ! empty( $atts['video']['contentUrl'] ) ) { ?>
 					<?php if ( $atts['video']['provider'] === 'local' ) { ?>
-                        <video controls poster="<?php echo esc_attr( $atts['video']['thumbnailUrl'] ) ?? ''; ?>">
+                        <video controls poster="<?php echo esc_attr( $atts['video']['thumbnailUrl'] ?? '' ); ?>">
                             <source src="<?php echo esc_url( $atts['video']['contentUrl'] ); ?>">
 							<?php echo _x( 'Your browser does not support the video tag.', 'Recipe', 'structured-content' ); ?>
                         </video>
@@ -171,7 +171,7 @@ if ( $atts['visible'] ) {
 					<?php } ?>
 				<?php } ?>
 				<?php if ( empty( $atts['video']['contentUrl'] ) && ! empty( $atts['video']['mediaVideo'] ) ) { ?>
-                    <video <?php echo esc_attr( $atts['video']['settings'] ) ?>>
+                    <video <?php echo esc_attr( $atts['video']['settings'] ) ?> poster="<?php echo esc_attr( $atts['video']['thumbnailUrl'] ?? '' ); ?>">
                         <source src="<?php echo esc_url( $atts['video']['mediaVideo']['url'] ); ?>">
 						<?php echo _x( 'Your browser does not support the video tag.', 'Recipe', 'structured-content' ); ?>
                     </video>
@@ -236,7 +236,9 @@ if ( $atts['visible'] ) {
         ,"nutrition": <?php echo json_encode( $atts['nutritionJson'] ); ?>
 	<?php } ?>
 <?php if ( ! empty( $atts['hasVideo'] === true ) ) { ?>
-        ,"video": <?php echo json_encode( $atts['videoJson'] ); ?>
+    ,"video": <?php echo json_encode( $atts['videoJson'] ); ?>
+
+        
 	<?php } ?>
     }
 </script>

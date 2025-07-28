@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Structured Content 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/structured-"
 "content\n"
-"POT-Creation-Date: 2023-12-31T15:32:48+00:00\n"
+"POT-Creation-Date: 2025-07-25T16:40:02+02:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,28 +14,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #. Plugin Name of the plugin
-#: includes/class-structuredcontent-register-tinymce.php:86
+#: class-structuredcontent.php
+#: includes/class-structuredcontent-register-tinymce.php:83
 msgid "Structured Content"
 msgstr "Structured Content"
 
 #. Plugin URI of the plugin
+#: class-structuredcontent.php
 msgid "https://wordpress.org/plugins/structured-content/"
 msgstr "https://de.wordpress.org/plugins/structured-content/"
 
 #. Description of the plugin
+#: class-structuredcontent.php
 msgid ""
 "Pimp your content with some feature boxes, which labels the output with "
 "micro formats http://schema.org/"
 msgstr "Füge Inhaltsboxen mit JSON-LD-Mikrodatenausgabe gemäß schema.org hinzu"
 
 #. Author of the plugin
+#: class-structuredcontent.php
 msgid "Gordon Böhme, Antonio Leutsch"
 msgstr "Gordon Böhme, Antonio Leutsch"
 
 #. Author URI of the plugin
+#: class-structuredcontent.php
 msgid "https://wpsc-plugin.com"
 msgstr "https://wpsc-plugin.de"
 
@@ -47,62 +52,70 @@ msgstr "Aaah, nicht lustig?"
 msgid "Enable or disable blocks"
 msgstr "Blöcke aktivieren oder deaktivieren"
 
-#: includes/class-structuredcontent-register-shortcodes.php:677
+#: includes/class-structuredcontent-register-shortcodes.php:412
+msgid "EventScheduled"
+msgstr "Geplant"
+
+#: includes/class-structuredcontent-register-shortcodes.php:413
+msgid "MixedEventAttendanceMode"
+msgstr "Teilnahmemodus"
+
+#: includes/class-structuredcontent-register-shortcodes.php:778
 #: dist/blocks.build.js:1
 msgctxt "Print Recipe Button Text"
 msgid "Print Recipe"
 msgstr "Rezept ausdrucken"
 
-#: includes/class-structuredcontent-register-shortcodes.php:701
+#: includes/class-structuredcontent-register-shortcodes.php:805
 #: dist/blocks.build.js:1
 msgid "Calories"
 msgstr "Kalorien"
 
-#: includes/class-structuredcontent-register-shortcodes.php:707
+#: includes/class-structuredcontent-register-shortcodes.php:811
 #: dist/blocks.build.js:1
 msgid "Carbohydrates"
 msgstr "Kohlenhydrate"
 
-#: includes/class-structuredcontent-register-shortcodes.php:713
+#: includes/class-structuredcontent-register-shortcodes.php:817
 #: dist/blocks.build.js:1
 msgid "Protein"
 msgstr "Eiweiß"
 
-#: includes/class-structuredcontent-register-shortcodes.php:719
+#: includes/class-structuredcontent-register-shortcodes.php:823
 #: dist/blocks.build.js:1
 msgid "Fat"
 msgstr "Fett"
 
-#: includes/class-structuredcontent-register-shortcodes.php:725
+#: includes/class-structuredcontent-register-shortcodes.php:829
 #: dist/blocks.build.js:1
 msgid "Saturated Fat"
 msgstr "Gesättigtes Fett"
 
-#: includes/class-structuredcontent-register-shortcodes.php:731
+#: includes/class-structuredcontent-register-shortcodes.php:835
 #: dist/blocks.build.js:1
 msgid "Monounsaturated Fat"
 msgstr "Einfach ungesättigtes Fett"
 
-#: includes/class-structuredcontent-register-shortcodes.php:737
+#: includes/class-structuredcontent-register-shortcodes.php:841
 #: dist/blocks.build.js:1
 msgid "Polyunsaturated Fat"
 msgstr "Mehrfach ungesättigtes Fett"
 
-#: includes/class-structuredcontent-register-shortcodes.php:897
+#: includes/class-structuredcontent-register-shortcodes.php:1003
 #: dist/blocks.build.js:1 src/blocks/components/duration-input/index.jsx:80
 msgid "day"
 msgid_plural "days"
 msgstr[0] "Tag"
 msgstr[1] "Tage"
 
-#: includes/class-structuredcontent-register-shortcodes.php:900
+#: includes/class-structuredcontent-register-shortcodes.php:1006
 #: dist/blocks.build.js:1 src/blocks/components/duration-input/index.jsx:84
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] "Stunde"
 msgstr[1] "Stunden"
 
-#: includes/class-structuredcontent-register-shortcodes.php:903
+#: includes/class-structuredcontent-register-shortcodes.php:1009
 #: dist/blocks.build.js:1 src/blocks/components/duration-input/index.jsx:88
 msgid "minute"
 msgid_plural "minutes"
@@ -265,7 +278,8 @@ msgstr "Max Mustermann"
 msgid "Offer"
 msgstr "Angebot"
 
-#: languages/structured-content-js.php:96 templates/shortcodes/event.php:220
+#: languages/structured-content-js.php:96 templates/shortcodes/course.php:187
+#: templates/shortcodes/event.php:220
 msgid "Availability"
 msgstr "Verfügbarkeit"
 
@@ -290,7 +304,8 @@ msgstr "Ticket Website"
 msgid "https://your-website.com"
 msgstr "https://deine-website.de"
 
-#: languages/structured-content-js.php:108 templates/shortcodes/event.php:259
+#: languages/structured-content-js.php:108 templates/shortcodes/course.php:161
+#: templates/shortcodes/event.php:259
 msgid "Price"
 msgstr "Preis"
 
@@ -302,11 +317,12 @@ msgstr "Alternativer Name."
 msgid "Please enter your Name"
 msgstr "Hier Namen eintragen"
 
-#: languages/structured-content-js.php:114 templates/shortcodes/person.php:39
+#: languages/structured-content-js.php:114 templates/blocks/profile-page.php:39
+#: templates/shortcodes/person.php:39
 msgid "Job Title"
 msgstr "Berufsangaben"
 
-#: languages/structured-content-js.php:118
+#: languages/structured-content-js.php:118 templates/blocks/profile-page.php:75
 #: templates/shortcodes/local-business.php:22
 #: templates/shortcodes/local-business.php:119
 #: templates/shortcodes/person.php:90
@@ -318,9 +334,9 @@ msgid "jane-doe@xyz.edu"
 msgstr "max@mustermann.de"
 
 #: languages/structured-content-js.php:122
-#: languages/structured-content-js.php:300 templates/shortcodes/event.php:123
-#: templates/shortcodes/person.php:98 templates/shortcodes/person.php:170
-#: templates/shortcodes/person.php:271
+#: languages/structured-content-js.php:300 templates/blocks/profile-page.php:83
+#: templates/shortcodes/event.php:123 templates/shortcodes/person.php:98
+#: templates/shortcodes/person.php:170 templates/shortcodes/person.php:271
 msgid "URL"
 msgstr "URL"
 
@@ -328,7 +344,8 @@ msgstr "URL"
 msgid "http://www.janedoe.com"
 msgstr "https://www.domain.de"
 
-#: languages/structured-content-js.php:126 templates/shortcodes/person.php:49
+#: languages/structured-content-js.php:126 templates/blocks/profile-page.php:49
+#: templates/shortcodes/person.php:49
 msgid "Birthdate"
 msgstr "Geburtsdatum"
 
@@ -356,14 +373,15 @@ msgstr "Zusätzliche CSS-Klasse."
 msgid "Company"
 msgstr "Arbeitgeber"
 
-#: languages/structured-content-js.php:140 templates/shortcodes/event.php:35
-#: templates/shortcodes/event.php:204 templates/shortcodes/job.php:24
-#: templates/shortcodes/person.php:20
+#: languages/structured-content-js.php:140 templates/blocks/profile-page.php:20
+#: templates/shortcodes/event.php:35 templates/shortcodes/event.php:204
+#: templates/shortcodes/job.php:24 templates/shortcodes/person.php:20
 msgid "Name"
 msgstr "Name"
 
 #: languages/structured-content-js.php:142
-#: languages/structured-content-js.php:260 templates/shortcodes/person.php:29
+#: languages/structured-content-js.php:260 templates/blocks/profile-page.php:29
+#: templates/blocks/profile-page.php:176 templates/shortcodes/person.php:29
 #: templates/shortcodes/person.php:209
 msgid "Alternate Name"
 msgstr "Alternativer Name"
@@ -386,7 +404,7 @@ msgstr "Zugehörige (Profil)Websites"
 msgid "Website / Social Media"
 msgstr "Website / Social Media"
 
-#: languages/structured-content-js.php:152 templates/shortcodes/course.php:31
+#: languages/structured-content-js.php:152 templates/shortcodes/course.php:32
 #: templates/shortcodes/job.php:32
 msgid "Same as (Website / Social Media)"
 msgstr "Zugehörige (Profil)Websites"
@@ -395,7 +413,7 @@ msgstr "Zugehörige (Profil)Websites"
 msgid "Job Location"
 msgstr "Arbeitsort"
 
-#: languages/structured-content-js.php:158
+#: languages/structured-content-js.php:158 templates/blocks/profile-page.php:91
 #: templates/shortcodes/local-business.php:32
 #: templates/shortcodes/local-business.php:143
 #: templates/shortcodes/person.php:106
@@ -406,7 +424,8 @@ msgstr "Telefon"
 msgid "(425) 123-4567"
 msgstr "0345-12345-67"
 
-#: languages/structured-content-js.php:162 templates/shortcodes/event.php:134
+#: languages/structured-content-js.php:162
+#: templates/blocks/profile-page.php:108 templates/shortcodes/event.php:134
 #: templates/shortcodes/job.php:68 templates/shortcodes/local-business.php:166
 #: templates/shortcodes/person.php:121
 msgid "Street"
@@ -416,7 +435,8 @@ msgstr "Straße"
 msgid "Any Street 3A"
 msgstr "Beispielstrasse 3A"
 
-#: languages/structured-content-js.php:166 templates/shortcodes/event.php:143
+#: languages/structured-content-js.php:166
+#: templates/blocks/profile-page.php:117 templates/shortcodes/event.php:143
 #: templates/shortcodes/job.php:77 templates/shortcodes/local-business.php:177
 #: templates/shortcodes/person.php:130
 msgid "Postal Code"
@@ -426,7 +446,8 @@ msgstr "Postleitzahl"
 msgid "Any Postal Code"
 msgstr "06114"
 
-#: languages/structured-content-js.php:170 templates/shortcodes/event.php:151
+#: languages/structured-content-js.php:170
+#: templates/blocks/profile-page.php:125 templates/shortcodes/event.php:151
 #: templates/shortcodes/job.php:85 templates/shortcodes/local-business.php:187
 #: templates/shortcodes/person.php:138
 msgid "Locality"
@@ -436,7 +457,8 @@ msgstr "Ort"
 msgid "Any City"
 msgstr "Musterstadt"
 
-#: languages/structured-content-js.php:174 templates/shortcodes/event.php:161
+#: languages/structured-content-js.php:174
+#: templates/blocks/profile-page.php:135 templates/shortcodes/event.php:161
 #: templates/shortcodes/job.php:95 templates/shortcodes/local-business.php:199
 #: templates/shortcodes/person.php:148
 msgid "Country ISO Code"
@@ -446,7 +468,8 @@ msgstr "Land (ISO Code)"
 msgid "US"
 msgstr "DE"
 
-#: languages/structured-content-js.php:178 templates/shortcodes/event.php:169
+#: languages/structured-content-js.php:178
+#: templates/blocks/profile-page.php:143 templates/shortcodes/event.php:169
 #: templates/shortcodes/job.php:103 templates/shortcodes/local-business.php:209
 #: templates/shortcodes/person.php:156
 msgid "Region ISO Code"
@@ -537,15 +560,18 @@ msgstr "Tageweise"
 msgid "Other"
 msgstr "Andere"
 
-#: languages/structured-content-js.php:222 templates/shortcodes/person.php:14
+#: languages/structured-content-js.php:222 templates/blocks/profile-page.php:14
+#: templates/shortcodes/person.php:14
 msgid "Personal"
 msgstr "Personenangaben"
 
-#: languages/structured-content-js.php:224 templates/shortcodes/person.php:86
+#: languages/structured-content-js.php:224 templates/blocks/profile-page.php:71
+#: templates/shortcodes/person.php:86
 msgid "Contact"
 msgstr "Kontakt"
 
 #: languages/structured-content-js.php:226
+#: templates/blocks/profile-page.php:104
 #: templates/shortcodes/local-business.php:161
 #: templates/shortcodes/person.php:117
 msgid "Address"
@@ -575,11 +601,11 @@ msgstr "Hier Kursnamen eingeben."
 msgid "Enter your Course Description here..."
 msgstr "Hier Kursbeschreibung eingeben."
 
-#: languages/structured-content-js.php:240 templates/shortcodes/course.php:18
+#: languages/structured-content-js.php:240 templates/shortcodes/course.php:19
 msgid "Provider Information"
 msgstr "Veranstalterinformationen"
 
-#: languages/structured-content-js.php:242 templates/shortcodes/course.php:23
+#: languages/structured-content-js.php:242 templates/shortcodes/course.php:24
 msgid "Provider Name"
 msgstr "Veranstaltername"
 
@@ -587,7 +613,8 @@ msgstr "Veranstaltername"
 msgid "Valid Through"
 msgstr "Gültig bis"
 
-#: languages/structured-content-js.php:246 templates/shortcodes/event.php:268
+#: languages/structured-content-js.php:246 templates/shortcodes/course.php:197
+#: templates/shortcodes/event.php:268
 msgid "Valid From"
 msgstr "Gültig ab"
 
@@ -603,11 +630,13 @@ msgstr "Hinzufügen"
 msgid "Remove Last One"
 msgstr "Letzten Eintrag entfernen"
 
-#: languages/structured-content-js.php:254 templates/shortcodes/person.php:194
+#: languages/structured-content-js.php:254
+#: templates/blocks/profile-page.php:157 templates/shortcodes/person.php:194
 msgid "Work"
 msgstr "Arbeitgeber"
 
-#: languages/structured-content-js.php:256 templates/shortcodes/person.php:198
+#: languages/structured-content-js.php:256
+#: templates/blocks/profile-page.php:165 templates/shortcodes/person.php:198
 msgid "Organisation Name"
 msgstr "Name der Organisation"
 
@@ -629,7 +658,8 @@ msgstr "URL"
 msgid "Organisation Website"
 msgstr "URL zur Website des Arbeitgebers"
 
-#: languages/structured-content-js.php:268 templates/shortcodes/job.php:43
+#: languages/structured-content-js.php:268
+#: templates/blocks/profile-page.php:202 templates/shortcodes/job.php:43
 #: templates/shortcodes/person.php:241
 msgid "Logo"
 msgstr "Logo"
@@ -642,11 +672,13 @@ msgstr "URL zum Logo des Arbeitgebers"
 msgid "Event Status"
 msgstr "Veranstaltungsstatus"
 
-#: languages/structured-content-js.php:274 templates/shortcodes/event.php:79
+#: languages/structured-content-js.php:274 templates/shortcodes/course.php:63
+#: templates/shortcodes/event.php:79
 msgid "Start Date"
 msgstr "Veranstaltungsbeginn"
 
-#: languages/structured-content-js.php:276 templates/shortcodes/event.php:87
+#: languages/structured-content-js.php:276 templates/shortcodes/course.php:73
+#: templates/shortcodes/event.php:87
 msgid "End Date"
 msgstr "Veranstaltungsende"
 
@@ -698,60 +730,108 @@ msgstr "Gemischt"
 msgid "Online URL of Event"
 msgstr "URL der Online-Veranstaltung"
 
-#: templates/blocks/recipe.php:43
+#: templates/blocks/profile-page.php:188
+msgid "Company URL"
+msgstr "URL des Arbeitgebers"
+
+#: templates/blocks/recipe.php:46
 msgctxt "Recipe"
 msgid "Prep Time:"
 msgstr "Vorbereitungszeit:"
 
-#: templates/blocks/recipe.php:49
+#: templates/blocks/recipe.php:52
 msgctxt "Recipe"
 msgid "Cook Time:"
 msgstr "Zubereitungszeit:"
 
-#: templates/blocks/recipe.php:55
+#: templates/blocks/recipe.php:58
 msgctxt "Recipe"
 msgid "Total Time:"
 msgstr "Zeit gesamt:"
 
-#: templates/blocks/recipe.php:69
+#: templates/blocks/recipe.php:72
 msgctxt "Recipe"
 msgid "Category:"
 msgstr "Kategorie:"
 
-#: templates/blocks/recipe.php:75
+#: templates/blocks/recipe.php:78
 msgctxt "Recipe"
 msgid "Cuisine:"
 msgstr "Küche:"
 
-#: templates/blocks/recipe.php:81
+#: templates/blocks/recipe.php:84
 msgctxt "Recipe"
 msgid "Yield:"
 msgstr "Ergebnis:"
 
-#: templates/blocks/recipe.php:91
+#: templates/blocks/recipe.php:94
 msgctxt "Recipe"
 msgid "Ingredients:"
 msgstr "Zutaten:"
 
-#: templates/blocks/recipe.php:103
+#: templates/blocks/recipe.php:126
 msgctxt "Recipe"
 msgid "Instructions:"
 msgstr "Anleitung:"
 
-#: templates/blocks/recipe.php:128
+#: templates/blocks/recipe.php:156
 msgctxt "Recipe"
 msgid "Video:"
 msgstr "Video:"
 
-#: templates/blocks/recipe.php:137 templates/blocks/recipe.php:148
+#: templates/blocks/recipe.php:165 templates/blocks/recipe.php:176
 msgctxt "Recipe"
 msgid "Your browser does not support the video tag."
 msgstr "Ihr Browser unterstützt das Video-Tag nicht."
 
-#: templates/blocks/recipe.php:157
+#: templates/blocks/recipe.php:185
 msgctxt "Recipe"
 msgid "Nutritions:"
 msgstr "Nährwerte:"
+
+#: templates/shortcodes/course.php:47
+msgid "Course Instance"
+msgstr "Kursname"
+
+#: templates/shortcodes/course.php:53
+msgid "Instance Name"
+msgstr "Art des Kurses"
+
+#: templates/shortcodes/course.php:85
+msgid "Course Mode"
+msgstr "Kurs-Modus"
+
+#: templates/shortcodes/course.php:95
+msgid "Course Platform"
+msgstr "Plattform"
+
+#: templates/shortcodes/course.php:107
+msgid "Course URL"
+msgstr "Kurs-URL"
+
+#: templates/shortcodes/course.php:117
+msgid "Course Schedule"
+msgstr "Zeitdauer"
+
+#: templates/shortcodes/course.php:129
+msgid "Repeat Count"
+msgstr "Wiederholungen"
+
+#: templates/shortcodes/course.php:139
+msgid "Repeat Frequency"
+msgstr "Wiederholungshäufigkeit"
+
+#: templates/shortcodes/course.php:155
+msgid "Offers"
+msgstr "Angebot"
+
+#: templates/shortcodes/course.php:175
+msgid "Category"
+msgstr "Kategorie"
+
+#: templates/shortcodes/course.php:209
+msgid "Offer URL"
+msgstr "Angebots-URL"
 
 #: templates/shortcodes/job.php:210
 msgid "Location Type"
@@ -1447,8 +1527,8 @@ msgstr "Title-ID (id=#...) für Event-Überschrift erstellen."
 
 #: dist/blocks.build.js:1
 msgctxt "Person block title"
-msgid "Person"
-msgstr "Person"
+msgid "Person (deprecated)"
+msgstr "Person (veraltet)"
 
 #: dist/blocks.build.js:1
 msgctxt "person search"
@@ -1464,6 +1544,13 @@ msgstr "Stellenangebot"
 msgctxt "structured content element person"
 msgid "structured-content"
 msgstr "PERSON-Element"
+
+#: dist/blocks.build.js:1
+msgctxt "Person block description"
+msgid "This block is deprecated. Please use the Profile Page block instead."
+msgstr ""
+"Dieser Block ist veraltet. Bitte verwenden Sie stattdessen den Block "
+"„ProfilePage“."
 
 #: dist/blocks.build.js:1
 msgctxt "URL to a profile to one of your colleagues."
@@ -1685,6 +1772,21 @@ msgctxt "Add another URL to a profile of the person."
 msgid "Add One"
 msgstr "Hinzufügen"
 
+#: dist/blocks.build.js:1 src/blocks/components/duration-input/index.jsx:131
+msgctxt "duration"
+msgid "Days"
+msgstr "Tage"
+
+#: dist/blocks.build.js:1 src/blocks/components/duration-input/index.jsx:140
+msgctxt "duration"
+msgid "Hours"
+msgstr "Stunden"
+
+#: dist/blocks.build.js:1 src/blocks/components/duration-input/index.jsx:149
+msgctxt "duration"
+msgid "Minutes"
+msgstr "Minuten"
+
 #: dist/blocks.build.js:1
 msgctxt "Title of the course."
 msgid "Course"
@@ -1728,6 +1830,156 @@ msgstr "Zugehörige (Kurs)Websites"
 msgctxt "Concrete profile URL of the course provider."
 msgid "https://your-website.com"
 msgstr "https://deine-website.de"
+
+#: dist/blocks.build.js:1
+msgctxt "Add details about the course instance."
+msgid "Course Instance"
+msgstr "Kursname"
+
+#: dist/blocks.build.js:1
+msgctxt "Name of the course instance"
+msgid "Instance Name"
+msgstr "Bezeichnung des Kurses"
+
+#: dist/blocks.build.js:1
+msgctxt "Name of the course instance."
+msgid "Spring Session"
+msgstr "Frühjahrstagung"
+
+#: dist/blocks.build.js:1
+msgctxt "Start date of the course"
+msgid "Start Date"
+msgstr "Veranstaltungsbeginn"
+
+#: dist/blocks.build.js:1
+msgctxt "End date of the course"
+msgid "End Date"
+msgstr "Veranstaltungsende"
+
+#: dist/blocks.build.js:1
+msgctxt "Mode of the course"
+msgid "Course Mode"
+msgstr "Kurs-Modus"
+
+#: dist/blocks.build.js:1
+msgctxt "Platform for the course"
+msgid "Course Platform"
+msgstr "Kursplattform"
+
+#: dist/blocks.build.js:1
+msgctxt "Platform for the course."
+msgid "Zoom, Google Meet, etc."
+msgstr "Zoom, Google Meet, etc."
+
+#: dist/blocks.build.js:1
+msgctxt "URL for the course"
+msgid "Course URL"
+msgstr "Kurs-URL"
+
+#: dist/blocks.build.js:1
+msgctxt "URL for the course."
+msgid "https://course-platform.com/course"
+msgstr "https://kurs-website.de/uebersicht"
+
+#: dist/blocks.build.js:1
+msgctxt "Schedule of the course"
+msgid "Course Schedule"
+msgstr "Zeitdauer"
+
+#: dist/blocks.build.js:1
+msgctxt "Schedule of the course."
+msgid "2 hours of lectures, 1 hour of lab work per week"
+msgstr "2 Stunden Vorlesungen, 1 Stunde Laborarbeit pro Woche"
+
+#: dist/blocks.build.js:1
+msgctxt "Number of times the course repeats"
+msgid "Repeat Count"
+msgstr "Wiederholungen"
+
+#: dist/blocks.build.js:1
+msgctxt "Number of times the course repeats"
+msgid "10"
+msgstr "10"
+
+#: dist/blocks.build.js:1
+msgctxt "Frequency of course repetition"
+msgid "Repeat Frequency"
+msgstr "Wiederholungshäufigkeit"
+
+#: dist/blocks.build.js:1
+msgctxt "Choose the frequency of course repetition."
+msgid "Select a Type"
+msgstr "Bitte auswählen"
+
+#: dist/blocks.build.js:1
+msgctxt "The course repeats daily."
+msgid "Daily"
+msgstr "Täglich"
+
+#: dist/blocks.build.js:1
+msgctxt "The course repeats weekly."
+msgid "Weekly"
+msgstr "Wöchentlich"
+
+#: dist/blocks.build.js:1
+msgctxt "The course repeats monthly."
+msgid "Monthly"
+msgstr "Monatlich"
+
+#: dist/blocks.build.js:1
+msgctxt "The course repeats yearly."
+msgid "Yearly"
+msgstr "Jährlich"
+
+#: dist/blocks.build.js:1
+msgctxt "Add details about the course offers."
+msgid "Offers"
+msgstr "Angebot"
+
+#: dist/blocks.build.js:1
+msgctxt "Price of the course"
+msgid "Price"
+msgstr "Preis"
+
+#: dist/blocks.build.js:1
+msgctxt "Price of the course."
+msgid "99.99"
+msgstr "99,99"
+
+#: dist/blocks.build.js:1
+msgctxt "Currency of the price"
+msgid "Currency"
+msgstr "Währung (ISO Code)"
+
+#: dist/blocks.build.js:1
+msgctxt "Availability of the course"
+msgid "Availability"
+msgstr "Verfügbarkeit"
+
+#: dist/blocks.build.js:1
+msgctxt "Category of the offer"
+msgid "Category"
+msgstr "Kategorie"
+
+#: dist/blocks.build.js:1
+msgctxt "Category of the offer."
+msgid "Online Course, Workshop, etc."
+msgstr "Online-Kurs, Worjshop, etc."
+
+#: dist/blocks.build.js:1
+msgctxt "Date when the offer becomes valid"
+msgid "Valid From"
+msgstr "Gültig ab"
+
+#: dist/blocks.build.js:1
+msgctxt "URL for the offer"
+msgid "Offer URL"
+msgstr "Angebots-URL"
+
+#: dist/blocks.build.js:1
+msgctxt "URL for the offer."
+msgid "https://your-website.com/course-offer"
+msgstr "https://kurs-website.de/angebot"
 
 #: dist/blocks.build.js:1
 msgctxt "Select a tag of the course title."
@@ -2009,87 +2261,87 @@ msgctxt "Add another URL to a profile of the local business."
 msgid "Add One"
 msgstr "Hinzufügen"
 
-#: dist/blocks.build.js:1 src/blocks/components/duration-input/index.jsx:131
-msgctxt "duration"
-msgid "Days"
-msgstr "Tage"
-
-#: dist/blocks.build.js:1 src/blocks/components/duration-input/index.jsx:140
-msgctxt "duration"
-msgid "Hours"
-msgstr "Stunden"
-
-#: dist/blocks.build.js:1 src/blocks/components/duration-input/index.jsx:149
-msgctxt "duration"
-msgid "Minutes"
-msgstr "Minuten"
-
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:190
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:233
 msgctxt "URL of the video,"
 msgid "URL"
 msgstr "URL"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:194
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:237
 msgctxt "URL of the video,"
 msgid "Video URL"
 msgstr "Video-URL"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:201
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:244
 msgctxt "Thumbnail URL of the video,"
 msgid "Poster URL"
 msgstr "Vorschaubild URL"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:240
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:255
+msgctxt "Date when the video was uploaded"
+msgid "Upload Date"
+msgstr "Hochlade-Datum"
+
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:300
 msgctxt "Media of the video,"
 msgid "Media"
 msgstr "Media"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:247
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:308
 msgctxt "Video settings"
 msgid "Video Settings"
 msgstr "Video-Einstellungen"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:251
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:318
 msgctxt "Recipe video settings"
 msgid "Recipe Video Settings"
 msgstr "Einstellungen zum Video des Rezepts"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:254
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:325
 msgctxt "Autoplay video,"
 msgid "Autoplay"
 msgstr "Autoplay"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:269
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:347
 msgctxt "Loop video,"
 msgid "Loop"
 msgstr "Automatisch wiederholen"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:284
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:369
 msgctxt "Muted video,"
 msgid "Muted"
 msgstr "Stumm"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:299
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:391
 msgctxt "Controls video,"
 msgid "Controls"
 msgstr "Videosteuerung"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:330
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:432
 msgctxt "Remove video from media library"
 msgid "Remove Video"
 msgstr "Bild entfernen"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:342
-msgctxt "Select video from media library"
-msgid "Select Video"
-msgstr "Video auswählen"
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:442
+msgctxt "Remove thumbnail from media library"
+msgid "Remove Thumbnail"
+msgstr "Vorschaubild entfernen"
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:358
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:454
+msgctxt "Select thumbnail from media library"
+msgid "Select Thumbnail from Media Library"
+msgstr "Vorschaubild aus der Medienbibliothek auswählen"
+
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:473
+msgctxt "Select video from media library"
+msgid "Select Video from Media Library"
+msgstr "Video aus der Mediathek auswählen"
+
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:494
 msgctxt "Title of the video,"
 msgid "Enter your video title here…"
 msgstr "Geben Sie hier Ihren Videotitel ein ..."
 
-#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:371
+#: dist/blocks.build.js:1 src/blocks/components/video-input/index.jsx:513
 msgctxt "Description of the video,"
 msgid "Enter your Video description here..."
 msgstr "Geben Sie hier Ihre Videobeschreibung ein..."
@@ -2355,10 +2607,225 @@ msgctxt "Add a video to your recipe."
 msgid "Add Video"
 msgstr "Video hinzufügen"
 
+#: dist/blocks.build.js:1
+msgctxt "Profile Page block title"
+msgid "Profile Page"
+msgstr "Profile Page"
+
+#: dist/blocks.build.js:1
+msgctxt "profile page"
+msgid "profile page"
+msgstr "Profilseite"
+
+#: dist/blocks.build.js:1
+msgctxt "profile"
+msgid "profile"
+msgstr "Profil"
+
+#: dist/blocks.build.js:1
+msgctxt "structured content element profile page"
+msgid "structured-content"
+msgstr "structured-content"
+
+#: dist/blocks.build.js:1
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: dist/blocks.build.js:1
+msgctxt "Some details about the profile."
+msgid "Personal"
+msgstr "Personenangaben"
+
+#: dist/blocks.build.js:1
+msgctxt "Name of the profile."
+msgid "Name"
+msgstr "Name"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the name of the profile."
+msgid "Please enter your name here."
+msgstr "Bitte Deinen Namen hier eingeben ..."
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the alternate name of the profile."
+msgid "Alternate Name"
+msgstr "Alternativer Name"
+
+#: dist/blocks.build.js:1
+msgctxt "Concrete alternate name of the profile."
+msgid "Alternate name"
+msgstr "Altern. Firmennamen eintragen"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the job title of the profile."
+msgid "Job Title"
+msgstr "Jobbezeichnung"
+
+#: dist/blocks.build.js:1
+msgctxt "Concrete job title of the profile."
+msgid "Job Title"
+msgstr "Jobbezeichnung"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the birthdate of the profile."
+msgid "Birthdate"
+msgstr "Geburtsdatum"
+
+#: dist/blocks.build.js:1
+msgid "Upload Image"
+msgstr "Bild hinzufügen"
+
+#: dist/blocks.build.js:1
+msgctxt "How to get in touch with the profile?"
+msgid "Contact"
+msgstr "Kontakt"
+
+#: dist/blocks.build.js:1
+msgctxt "E-Mail of the profile."
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: dist/blocks.build.js:1
+msgctxt "Concrete email of the profile."
+msgid "jane-doe@xyz.edu"
+msgstr "max@mustermann.de"
+
+#: dist/blocks.build.js:1
+msgctxt "URL to a profile."
+msgid "URL"
+msgstr "URL"
+
+#: dist/blocks.build.js:1
+msgctxt "Concrete URL of the profile."
+msgid "http://www.janedoe.com"
+msgstr "https://www.domain.de"
+
+#: dist/blocks.build.js:1
+msgctxt "Telephone number of the profile."
+msgid "Telephone"
+msgstr "Telefon"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter concrete telephone number of the profile."
+msgid "(425) 123-4567"
+msgstr "0345-12345-67"
+
+#: dist/blocks.build.js:1
+msgctxt "Address of the profile."
+msgid "Address"
+msgstr "Adresse"
+
+#: dist/blocks.build.js:1
+msgctxt "Insert the street name where the profile is located."
+msgid "Street"
+msgstr "Straße"
+
+#: dist/blocks.build.js:1
+msgctxt "The concrete street name where the profile is located."
+msgid "Any Street 3A"
+msgstr "Beispielstrasse 3A"
+
+#: dist/blocks.build.js:1
+msgctxt "Insert postal code where the profile is located."
+msgid "Postal Code"
+msgstr "Postleitzahl"
+
+#: dist/blocks.build.js:1
+msgctxt "The concrete postal code where the profile is located."
+msgid "Any postal code"
+msgstr "06114"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the place name where the profile is located."
+msgid "Locality"
+msgstr "Ort"
+
+#: dist/blocks.build.js:1
+msgctxt "The concrete city name where the profile is located."
+msgid "Any city"
+msgstr "Musterstadt"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the iso code of the country where the profile is located."
+msgid "Country ISO Code"
+msgstr "Land (ISO Code)"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the iso code of the region where the profile is located."
+msgid "Region ISO Code"
+msgstr "Region (ISO Code)"
+
+#: dist/blocks.build.js:1
+msgctxt "Details about the workplace of the profile."
+msgid "Work"
+msgstr "Arbeitgeber"
+
+#: dist/blocks.build.js:1
+msgctxt "Name of the company the profile works for."
+msgid "Company Name"
+msgstr "Firmenname"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the name of the company the profile works for."
+msgid "Enter company name."
+msgstr "Firmenname eingeben."
+
+#: dist/blocks.build.js:1
+msgctxt "URL of the company the profile works for."
+msgid "Company URL"
+msgstr "Arbeitgeber-URL"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the URL of the company."
+msgid "https://company.com"
+msgstr "https://arbeitgeber.de"
+
+#: dist/blocks.build.js:1
+msgctxt "Alternative name of the company the profile works for."
+msgid "Company Alternative Name"
+msgstr "Alternativer Firmenname"
+
+#: dist/blocks.build.js:1
+msgctxt "Enter the alternative name of the company."
+msgid "Enter company alternative name"
+msgstr "Alternativen Firmenname eingeben"
+
+#: dist/blocks.build.js:1
+msgctxt "Logo of the company the profile works for."
+msgid "Company Logo"
+msgstr "Firmenlogo"
+
+#: dist/blocks.build.js:1
+msgid "Upload Logo"
+msgstr "Logo hinzufügen"
+
+#: dist/blocks.build.js:1
+msgctxt "Additional profile URLs."
+msgid "Same As"
+msgstr "Zugehörige (Profil)Websites"
+
+#: dist/blocks.build.js:1
+msgctxt "URL to additional profiles."
+msgid "URL"
+msgstr "URL"
+
+#: dist/blocks.build.js:1
+msgctxt "Add another URL to a profile."
+msgid "Add One"
+msgstr "Hinzufügen"
+
 #: src/blocks/components/divider-with-word/index.jsx:7
 msgctxt "Word to display in the divider"
 msgid "OR"
 msgstr "ODER"
+
+#~ msgctxt "Person block title"
+#~ msgid "Person"
+#~ msgstr "Person"
+
+#~ msgctxt "Select video from media library"
+#~ msgid "Select Video"
+#~ msgstr "Video auswählen"
 
 #~ msgctxt "Thumbnail URL of the video,"
 #~ msgid "Thumbnail URL"

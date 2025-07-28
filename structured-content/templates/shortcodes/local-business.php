@@ -109,7 +109,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 										<?php echo __( 'Contact Type', 'structured-content' ); ?>
 									</div>
 									<div class="wp-block-structured-content-local_business__contact_type">
-										<?php echo $atts['contact_type']; ?>
+										<?php echo wp_kses_post($atts['contact_type']); ?>
 									</div>
 								</div>
 							<?php } ?>
@@ -166,7 +166,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 								<?php echo __( 'Street', 'structured-content' ); ?>
 							</div>
 							<div class="wp-block-structured-content-local_business__streetAddress">
-								<?php echo $atts['street_address']; ?>
+								<?php echo esc_html($atts['street_address']); ?>
 							</div>
 						</div>
 					<?php } ?>
@@ -177,7 +177,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 									<?php echo __( 'Postal Code', 'structured-content' ); ?>
 								</div>
 								<div class="wp-block-structured-content-local_business__postalCode">
-									<?php echo $atts['postal_code']; ?>
+									<?php echo esc_html($atts['postal_code']); ?>
 								</div>
 							</div>
 						<?php } ?>
@@ -187,7 +187,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 									<?php echo __( 'Locality', 'structured-content' ); ?>
 								</div>
 								<div class="wp-block-structured-content-local_business__addressLocality">
-									<?php echo $atts['address_locality']; ?>
+									<?php echo esc_html($atts['address_locality']); ?>
 								</div>
 							</div>
 						<?php } ?>
@@ -199,7 +199,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 									<?php echo __( 'Country ISO Code', 'structured-content' ); ?>
 								</div>
 								<div class="wp-block-structured-content-local_business__addressCountry">
-									<?php echo $atts['address_country']; ?>
+									<?php echo esc_html($atts['address_country']); ?>
 								</div>
 							</div>
 						<?php } ?>
@@ -209,7 +209,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 									<?php echo __( 'Region ISO Code', 'structured-content' ); ?>
 								</div>
 								<div class="wp-block-structured-content-local_business__addressRegion">
-									<?php echo $atts['address_region']; ?>
+									<?php echo esc_html($atts['address_region']); ?>
 								</div>
 							</div>
 						<?php } ?>
@@ -221,7 +221,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 									<?php echo __( 'Latitude', 'structured-content' ); ?>
 								</div>
 								<div class="wp-block-structured-content-local_business__longitude">
-									<?php echo $atts['latitude']; ?>
+									<?php echo esc_html($atts['latitude']); ?>
 								</div>
 							</div>
 						<?php } ?>
@@ -231,7 +231,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 									<?php echo __( 'Longitude', 'structured-content' ); ?>
 								</div>
 								<div class="wp-block-structured-content-local_business__longitude">
-									<?php echo $atts['longitude']; ?>
+									<?php echo esc_html($atts['longitude']); ?>
 								</div>
 							</div>
 						<?php } ?>
@@ -249,7 +249,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 								<?php echo __( 'Founding Date', 'structured-content' ); ?>
 							</div>
 							<div class="wp-block-structured-content-local_business__founding_date">
-								<?php echo $atts['founding_date']; ?>
+								<?php echo esc_html($atts['founding_date']); ?>
 							</div>
 						</div>
 					<?php } ?>
@@ -259,7 +259,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 								<?php echo __( 'Currencies Accepted', 'structured-content' ); ?>
 							</div>
 							<div class="wp-block-structured-content-local_business__currencies_accepted">
-								<?php echo $atts['currencies_accepted']; ?>
+								<?php echo esc_html($atts['currencies_accepted']); ?>
 							</div>
 						</div>
 
@@ -270,7 +270,7 @@ if ( ! isset( $atts['html'] ) || $atts['html'] === true || $atts['html'] === 'tr
 								<?php echo __( 'Price Range', 'structured-content' ); ?>
 							</div>
 							<div class="wp-block-structured-content-local_business__price_range">
-								<?php echo $atts['price_range']; ?>
+								<?php echo esc_html($atts['price_range']); ?>
 							</div>
 						</div>
 					<?php } ?>

@@ -1,16 +1,16 @@
 == Structured Content (JSON-LD) #wpsc ==
 
 Contributors: gorbo,antonioleutsch
-Tags:FAQPage,LocalBusiness,JobPosting,jsonld,wpsc
+Tags:FAQPage,LocalBusiness,JobPosting,Recipe,ProfilePage,Course,jsonld
 Donate link: https://paypal.me/antonioleutsch
 Requires at least: 7.3
-Tested up to: 6.7.2
+Tested up to: 6.8.2
 Requires PHP: 7.0
-Stable tag: 1.6.4
+Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add flexible content boxes with JSON-LD microdata output according to schema.org e.g. FAQPage, Person, Event, Course, LocalBusiness or JobPosting.
+Add flexible content boxes with JSON-LD microdata output according to schema.org e.g. FAQPage, ProfilePage, Event, Course, LocalBusiness, JobPosting and Recipe.
 
 == Installation ==
 
@@ -37,12 +37,13 @@ A special goal is, among other things, that your answers to questions from Googl
 
 Currently the plugin offers seven structured data elements:
 - FAQPage
+- ProfilePage
 - JobPosting
 - LocalBusiness
-- Recipe
-- Person
 - Event
 - Course
+- Recipe
+- Person (deprecated; use ProfilePage insted)
 
 Structure your content now and MAKE CONTENT GREAT AGAIN! #wpsc
 
@@ -66,9 +67,6 @@ Alternatively use these shortcodes in your TinyMCE:
 **Event**
 > [sc_fs_event html="true/false" title="Event title" title_tag="p or h2-h6" event_location="Event location" status="EventScheduled" event_attendance_mode="OfflineEventAttendanceMode" start_date="2022-08-22T10:25" end_date="2022-08-22T11:25" street_address="Any Street" address_locality="Any City" address_region="DE-ST" postal_code="Any Postal Code" address_country="US" image_id="" performer="PerformingGroup" performer_name="John Doe" offer_availability="InStock" offer_url="https://example.com" currency_code="EUR" price="40.00" offer_valid_from="2022-08-20T10:25" css_class="your-class"]Event description – you can format it as you want[/sc_fs_event]
 
-**Course**
-> [sc_fs_course html="true/false" title="Course title" title_tag="p or h2-h6" provider_name="Provider Name" provider_same_as="https://example.com" css_class="your-class" ]Course-Description – you can format it as you want[/sc_fs_course]
-
 **Person**
 > [sc_fs_person html="true/false" person_name="John Doe" job_title="CEO of Something" image_id="24" street_address="Any Street" address_locality="Any City" address_region="DE-ST" postal_code="06114" address_country="DE" email="john-doe@example.com" url="https://example.com" telephone="0049-123-45678" css_class="your-class" colleague="https://url.com/about-colleague.html" works_for_name="Company ABC" works_for_alt="Cool Company ABC" works_for_url="https://company-abc.xyz" works_for_logo="https://company-abc.xyz/logo.jpg" same_as="https://linkedin.com/profile/"]
 
@@ -85,14 +83,22 @@ We will continuously offer new structured data elements and deliver them as upda
 
 == Changelog ==
 
+= 1.7.0 =
+* [FEATURE] Gutenberg block ProfilePage
+* [FEATURE] Gutenberg block Course with new attributes
+* [PATCH] Update Recipe Block
+* [PATCH] Compatibility with WP 6.8
+* [FIX] Fix Vulnerability
+
 = 1.6.4 =
-* [FIX] Cross-Site Scripting (XSS) Vulnerability
+* [FIX] Fix Vulnerability
+* [PATCH] Compatibility with WP 6.7
 
 = 1.6.3 =
-* [FIX] Cross-Site Scripting (XSS) Vulnerability in Recipe Block
+* [FIX] Fix Cross-Site Scripting (XSS) Vulnerability in Recipe Block
 
 = 1.6.2 =
-* [FIX] Cross-Site Scripting (XSS) Vulnerability in Classic Editor Shortcodes
+* [FIX] Cross-Site Scripting (XSS) Vulnerability in Shortcodes
 
 = 1.6.1 =
 * [FIX] removing unnecessary in block #65

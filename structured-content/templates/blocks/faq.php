@@ -8,7 +8,7 @@ foreach ( $atts['elements'] as $element ) {
 
 	if ( $element->atts->visible ) { ?>
 		<<?php echo $atts['summary'] ? 'details' : 'section'; ?>
-		class="sc_fs_faq sc_card <?php echo esc_attr($atts['css_class']); ?> <?php echo esc_attr($atts['className']); ?> <?php echo $element->atts->className; ?> <?php echo $atts['summary'] && $atts['animate_summary'] ? ' sc_fs_card__animate' : ''; ?>"
+		help class="sc_fs_faq sc_card <?php echo esc_attr($atts['css_class']); ?> <?php echo esc_attr($atts['className']); ?> <?php echo esc_attr($element->atts->className); ?> <?php echo $atts['summary'] && $atts['animate_summary'] ? ' sc_fs_card__animate' : ''; ?>"
 		<?php echo $atts['summary'] && $element->atts->open ? 'open' : ''; ?>
 		>
 		<?php if ( $atts['summary'] ) { ?>
